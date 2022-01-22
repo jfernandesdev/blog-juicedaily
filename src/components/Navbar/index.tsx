@@ -14,7 +14,7 @@ import {
 import InputSearch from '../InputSearch';
 
 const Navbar: React.FC = () => {
-  const [menuIsOpen, setMenuIsOpen] = useState(true);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);

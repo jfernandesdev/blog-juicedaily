@@ -9,7 +9,6 @@ export const Form = styled.form`
   
   :hover, :focus {
     input {
-      transition: width 0.3s;
       width: 300px;
       padding: 5px 10px;
     }
@@ -23,6 +22,7 @@ export const Input = styled.input`
   border: 0;
   outline: 0;
   width: 0;
+  transition: width 0.3s ease 0s;
 
   ::placeholder {
     color: rgba(255,255,255,0.7);

@@ -11,7 +11,7 @@ import { Search } from '../../styles/Icons';
 const InputSearch: React.FC = () => {
   return (
     <Form>
-      <Input type='text' name='search' placeholder="O que você procura?" required autoFocus={true} />
+      <Input type='text' name='search' placeholder="O que você procura?" required autoComplete="off" autoFocus={true} />
     
       <ButtonSearch type="submit">
         <Search />

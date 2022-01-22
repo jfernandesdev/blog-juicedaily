@@ -9,12 +9,14 @@ export default createGlobalStyle`
 
   html, body {
     font: 16px 'Poppins', 'Roboto', Helvetica, Arial, sans-serif;
+    color: var(--black);
   }
 
   :root {
     --orange: #FF553C;
     --white: #FFFFFF;
     --black: #121212;
+    --light-gray: #D9EBED;
   }
 
   @keyframes hamburger4animTop {

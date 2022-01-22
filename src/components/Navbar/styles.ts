@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  position: fixed;
+  width: 100%;
+  z-index: 2;
   background: var(--white);
   height: 90px;
   display: flex;
   align-items: center;
   padding: 0 5%;
-  box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.01);
 `;
 
 export const Logo = styled.div`
@@ -16,7 +19,7 @@ export const Logo = styled.div`
   gap: 8px;
 
   > span {
-    border-left: 1px solid rgba(0,0,0,0.3);
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
     opacity: 0.3;
     padding-left: 8px;
     line-height: 20px;
@@ -36,13 +39,13 @@ export const NavContainer = styled.div`
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     visibility: hidden;
     width: 0;
-   
+
     &.openMenu {
       width: 100%;
       visibility: revert;
       > ul > li > a {
-          color: var(--white);
-       }
+        color: var(--white);
+      }
     }
 
     > ul {
@@ -77,11 +80,11 @@ export const NavItem = styled.li`
     display: block;
     bottom: 0px;
     height: 2px;
-    transition: all ease-in-out .3s;
-    -moz-transition: all ease-in-out .3s;
-    -webkit-transition: all ease-in-out .3s;
-    -o-transition: all ease-in-out .3s;
-    -ms-transition: all ease-in-out .3s;
+    transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
   }
 
   :hover:before {
@@ -98,12 +101,12 @@ export const WrapperBtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   right: 0;
 `;
 
 export const NavbarToggler = styled.button`
-  @media(max-width: 769px) {
+  @media (max-width: 769px) {
     display: flex;
   }
 
