@@ -1,8 +1,12 @@
 import React from 'react';
 
-import {Container, Content, Title, Text} from './styles';
+import {Container, Content, Title, Text, PostsGrid} from './styles';
 
 import Carousel, {CarouselItem} from '../components/Carousel';
+
+import LargeCard from '../components/LargeCard';
+import SmallCard from '../components/SmallCard';
+import MediumCard from '../components/MediumCard';
 
 const banners = [
   {
@@ -37,6 +41,22 @@ const Home: React.FC = () => {
           </CarouselItem>
         ))}
       </Carousel>
+
+      <PostsGrid>
+        <LargeCard />
+
+        <div>
+          {Array.from({ length: 4 }).map((_, index) => (
+            <SmallCard key={index} />
+          ))}
+        </div> 
+       
+       <div>
+        {Array.from({ length: 6}).map((_, index) => (
+          <MediumCard key={index} />
+        ))}
+       </div>
+      </PostsGrid>
     </>
   );
 };

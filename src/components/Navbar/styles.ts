@@ -8,8 +8,12 @@ export const Container = styled.div`
   height: 90px;
   display: flex;
   align-items: center;
-  padding: 0 5%;
+  padding: 0 5% 0 90px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.01);
+
+  @media (max-width: 769px) {
+    padding: 0 5%;
+  }
 `;
 
 export const Logo = styled.div`

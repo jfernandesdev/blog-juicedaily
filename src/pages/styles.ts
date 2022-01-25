@@ -64,3 +64,40 @@ export const Text = styled.p`
     font-size: 0.9em;
   }
 `;
+
+
+export const PostsGrid = styled.div`
+  padding: 3% 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+
+  @media (max-width: 769px) {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+  }
+
+  > :nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  > :nth-child(2) {
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+
+   > :nth-child(3) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+    @media (max-width: 769px) {
+    display: flex;
+    flex-direction: column;
+  }
+  }
+`;
