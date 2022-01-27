@@ -44,7 +44,6 @@ const Home: React.FC = () => {
 
       <PostsGrid>
         <LargeCard />
-
         <div>
           {Array.from({ length: 4 }).map((_, index) => (
             <SmallCard key={index} />

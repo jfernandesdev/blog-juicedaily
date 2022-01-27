@@ -9,8 +9,8 @@ export const Container = styled.div<ContainerProps>`
   height: calc(100vh - 100px);
   background: ${props =>
     props.imageBackground &&
-    `linear-gradient(to right, transparent 0%, #fcfcfc 60%),
-    url('${props.imageBackground}') no-repeat left top`};
+    `linear-gradient(to right, transparent 0%, #fcfcfc 70%),
+    url('${props.imageBackground}') no-repeat left center`};
   background-size: cover;
   display: flex;
   justify-content: flex-end;

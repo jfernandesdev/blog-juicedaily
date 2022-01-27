@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   width: 100%;
-  height: 100px;
+  height: 90px;
   overflow: hidden;
   background: var(--white);
   display: flex;

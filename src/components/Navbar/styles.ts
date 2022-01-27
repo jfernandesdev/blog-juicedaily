@@ -22,6 +22,10 @@ export const Logo = styled.div`
   margin-right: 5%;
   gap: 8px;
 
+  > img {
+    width: 130px;
+  }
+
   > span {
     border-left: 1px solid rgba(0, 0, 0, 0.3);
     opacity: 0.3;
