@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   overflow: hidden;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 90px);
   position: relative;
 `;
 

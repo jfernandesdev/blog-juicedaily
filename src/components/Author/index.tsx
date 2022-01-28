@@ -7,18 +7,15 @@ import {
 } from './styles';
 
 interface AuthorProps {
-  size?: number;
   image?: string;
   name: string;
 }
 
-const Author: React.FC<AuthorProps> = ({ size, image, name}) => {
+export const Author: React.FC<AuthorProps> = ({ image, name}) => {
   return (
     <Wrapper>
-      <Avatar src={image} size={size}/>
+      <Avatar src={image}/>
       <Name>{name}</Name>
     </Wrapper>
   );
 }
-
-export default Author;

@@ -12,7 +12,7 @@ export const CarouselItem = ({children}) => {
   return <WrapperCarouselItem>{children}</WrapperCarouselItem>;
 };
 
-const Carousel: React.FC = ({children}) => {
+export const Carousel: React.FC = ({children}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -75,5 +75,3 @@ const Carousel: React.FC = ({children}) => {
     </Container>
   );
 };
-
-export default Carousel;

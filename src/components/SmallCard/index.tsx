@@ -6,16 +6,17 @@ import {
   Wrapper,
 } from './styles';
 
-import Author from '../Author';
+import Title from '../Title';
+import { Author } from '../Author';
 
-const SmallCard: React.FC = () => {
+export const SmallCard: React.FC = () => {
   return (
     <Card>
 
       <Image image='./avocado.jpg' />
 
       <Wrapper>
-        <h2>I am large card</h2>
+        <Title size={15}>Simple Juice Recipes to boost your immune system</Title>
 
         <div>
           <Author
@@ -26,9 +27,6 @@ const SmallCard: React.FC = () => {
           <span>Jan 22, 2022</span>
         </div>
       </Wrapper>
-
     </Card>
   );
 }
-
-export default SmallCard;

@@ -6,7 +6,7 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 90px);
   background: ${props =>
     props.imageBackground &&
     `linear-gradient(to right, transparent 0%, #fcfcfc 70%),
@@ -64,7 +64,6 @@ export const Text = styled.p`
     font-size: 0.9em;
   }
 `;
-
 
 export const PostsGrid = styled.div`
   padding: 3% 90px;

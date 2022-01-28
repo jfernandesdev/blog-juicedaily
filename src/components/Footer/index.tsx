@@ -15,7 +15,7 @@ import {
   SocialBtn
 } from './styles';
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
   return (
     <Container>
       <LogoWrapper>
@@ -37,5 +37,3 @@ const Footer: React.FC = () => {
     </Container>
   );
 }
-
-export default Footer;

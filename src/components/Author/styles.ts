@@ -3,16 +3,12 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
 `;
 
-interface AvatarProps {
-  size?: number;
-}
-
-export const Avatar = styled.img<AvatarProps>`
-  width: ${props => props.size ? `${props.size}px` : '28px'};
-  height: ${props => props.size ? `${props.size}px` : '28px'};
+export const Avatar = styled.img`
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   flex-shrink: 0;
 `;

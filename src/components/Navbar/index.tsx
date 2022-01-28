@@ -11,9 +11,9 @@ import {
   NavbarToggler
 } from './styles';
 
-import InputSearch from '../InputSearch';
+import { InputSearch } from '../InputSearch';
 
-const Navbar: React.FC = () => {
+export const Navbar: React.FC = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -62,5 +62,3 @@ const Navbar: React.FC = () => {
     </Container>
   );
 };
-
-export default Navbar;

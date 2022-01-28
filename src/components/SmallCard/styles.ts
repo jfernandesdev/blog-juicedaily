@@ -27,13 +27,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   padding: 5%;
   
-  h2 {
-    font-weight: 500;
-    font-size: 17.3481px;
-    line-height: 25px;
-    cursor: pointer;
-  }
-
   > div {
     display: flex;
     align-items: center;
@@ -45,7 +38,7 @@ export const Wrapper = styled.div`
    
     > span {
       font-weight: normal;
-      font-size: 13px;
+      font-size: 11px;
       line-height: 12px;
       letter-spacing: 0.5px;
       opacity: 0.3;

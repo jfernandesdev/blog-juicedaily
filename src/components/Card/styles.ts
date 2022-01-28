@@ -1,42 +1,42 @@
 import styled from 'styled-components';
 
-export const Card = styled.div`
+export const CardWrapper = styled.div`
   width: 100%;
-  max-height: 450px;
+  max-height: 410px;
   overflow: hidden;
   background: var(--white);
+`;
 
-  p {
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 26px;
-    letter-spacing: 0.5px;
-    opacity: 0.7;
-    margin-top: 8px;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
-
-  h2 {
-    cursor: pointer;
-  }
+export const Description = styled.p`
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 `;
 
 interface ImageProps {
   image?: string;
+  type?: string;
 }
 
 export const Image = styled.div<ImageProps>`
   width: 100%;
-  height: 60%;
+  height: ${props => props.type === 'large' ? '55%' : '200px'};
   background: ${props =>
     props.image && `url(${props.image}) no-repeat center center;`};
   background-size: cover;
   cursor: pointer;
+
+  @media (max-width: 769px) {
+    height: 200px;
+  }
+
 `;
 
 export const Wrapper = styled.div`

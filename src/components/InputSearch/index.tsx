@@ -8,7 +8,7 @@ import {
 
 import { Search } from '../../styles/Icons';
 
-const InputSearch: React.FC = () => {
+export const InputSearch: React.FC = () => {
   return (
     <Form>
       <Input type='text' name='search' placeholder="O que você procura?" required autoComplete="off" autoFocus={true} />
@@ -19,5 +19,3 @@ const InputSearch: React.FC = () => {
     </Form>
   )
 }
-
-export default InputSearch;

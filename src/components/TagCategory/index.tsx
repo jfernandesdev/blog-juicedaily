@@ -9,10 +9,8 @@ interface TagCategory {
   color?: string;
 }
 
-const TagCategory: React.FC<TagCategory> = ({ category, color}) => {
+export const TagCategory: React.FC<TagCategory> = ({ category, color}) => {
   return (
     <Category color={color}>{category}</Category>
   );
 }
-
-export default TagCategory;
