@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 import {
   Container,
@@ -23,10 +24,12 @@ export const Navbar: React.FC = () => {
   return (
     <Container>
       <Logo>
-        <img src='./logo.svg' alt='Juicedaily' />
+        <Link href="/">
+          <img src='/logo.svg' alt='Juicedaily' />
+        </Link>
         <span>Blog</span>
       </Logo>
-
+    
       <NavContainer className={menuIsOpen && "openMenu"}>
         <Nav>
           <NavItem>

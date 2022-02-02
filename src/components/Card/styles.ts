@@ -27,7 +27,7 @@ interface ImageProps {
 
 export const Image = styled.div<ImageProps>`
   width: 100%;
-  height: ${props => props.type === 'large' ? '55%' : '200px'};
+  height: ${props => props.type === 'large' ? '55%' : '160px'};
   background: ${props =>
     props.image && `url(${props.image}) no-repeat center center;`};
   background-size: cover;

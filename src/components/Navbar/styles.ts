@@ -24,6 +24,7 @@ export const Logo = styled.div`
 
   > img {
     width: 130px;
+    cursor: pointer;
   }
 
   > span {

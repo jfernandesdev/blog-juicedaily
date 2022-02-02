@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
   return (
     <Container>
       <LogoWrapper>
-        <Logo src="logo.svg" alt="Juicedaily" />
+        <Logo src="/logo.svg" alt="Juicedaily" />
         <Copy>&copy; 2022</Copy>
       </LogoWrapper>
 
