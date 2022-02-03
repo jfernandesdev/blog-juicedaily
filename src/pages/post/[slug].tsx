@@ -11,6 +11,7 @@ import {
   Banner
 } from './styles';
 
+import { ShareButtons } from '../../components/ShareButtons';
 import { TagCategory } from '../../components/TagCategory';
 import { Author } from '../../components/Author';
 import { Card } from '../../components/Card';
@@ -20,6 +21,7 @@ const Post: React.FC = () => {
     <Container>
       <Image image="/avocado.jpg" />
       <Content>
+        <ShareButtons color="#40B2C9"/>
         <Title>Simple Juice Recipes to boost your immune system</Title>
 
         <Wrapper>
@@ -28,7 +30,7 @@ const Post: React.FC = () => {
             name="Silvia Araújo"
           />
 
-          <TagCategory category="Fruit" color="#40B2C9" withSeparator/>
+          <TagCategory category="Fruit" color="#40B2C9" withSeparator />
 
           <span>Jan 22, 2022</span>
         </Wrapper>
