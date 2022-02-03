@@ -6,8 +6,9 @@ interface TitleProps {
 
 export default styled.h2<TitleProps>`
   font-weight: 500;
-  font-size: ${props => props.size ? `${props.size}px` : ' 19px'};
-  line-height: ${props => props.size ? `calc(${props.size} + 5px)` : ' 30px'};
+  font-size: ${(props) => (props.size ? `${props.size}px` : ' 18px')};
+  line-height: ${(props) =>
+    props.size ? `calc(${props.size} + 5px)` : ' 28px'};
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

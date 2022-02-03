@@ -3,7 +3,7 @@ import React from 'react';
 import { Navbar } from '../Navbar';
 import { Footer } from '../Footer';
 
-export const Layout: React.FC = ({children}) => {
+export const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Navbar />
@@ -11,4 +11,4 @@ export const Layout: React.FC = ({children}) => {
       <Footer />
     </>
   );
-}
+};

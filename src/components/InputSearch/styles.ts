@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 export const Form = styled.form`
   display: flex;
-  
-  @media(max-width: 769px) {
+
+  @media (max-width: 769px) {
     display: none;
   }
-  
-  :hover, :focus {
+
+  :hover,
+  :focus {
     input {
       width: 300px;
       padding: 5px 10px;
@@ -25,7 +26,7 @@ export const Input = styled.input`
   transition: width 0.3s ease 0s;
 
   ::placeholder {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
   }
 `;
 

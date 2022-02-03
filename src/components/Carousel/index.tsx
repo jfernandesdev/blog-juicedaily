@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useSwipeable } from 'react-swipeable'; 
+import { useSwipeable } from 'react-swipeable';
 
-import {
-  Container, 
-  Inner, 
-  WrapperCarouselItem,
-  Indicators
-} from './styles';
+import { Container, Inner, WrapperCarouselItem, Indicators } from './styles';
 
-export const CarouselItem = ({children}) => {
+export const CarouselItem = ({ children }) => {
   return <WrapperCarouselItem>{children}</WrapperCarouselItem>;
 };
 
-export const Carousel: React.FC = ({children}) => {
+export const Carousel: React.FC = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  const updateIndex = newIndex => {
+  const updateIndex = (newIndex) => {
     if (newIndex < 0) {
       newIndex = React.Children.count(children) - 1;
     } else if (newIndex >= React.Children.count(children)) {
@@ -28,16 +23,16 @@ export const Carousel: React.FC = ({children}) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if(!paused) {
+      if (!paused) {
         updateIndex(activeIndex + 1);
       }
     }, 5000);
 
     return () => {
-      if(interval) {
+      if (interval) {
         clearInterval(interval);
       }
-    }
+    };
   });
 
   const handlers = useSwipeable({
@@ -65,9 +60,12 @@ export const Carousel: React.FC = ({children}) => {
           children,
           (child: React.ReactElement<any>, index) => {
             return (
-              <button 
-              className={`${index === activeIndex && 'active'}`}
-              onClick={() => { updateIndex(index); }} />
+              <button
+                className={`${index === activeIndex && 'active'}`}
+                onClick={() => {
+                  updateIndex(index);
+                }}
+              />
             );
           }
         )}

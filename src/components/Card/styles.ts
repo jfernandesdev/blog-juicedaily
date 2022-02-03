@@ -27,8 +27,8 @@ interface ImageProps {
 
 export const Image = styled.div<ImageProps>`
   width: 100%;
-  height: ${props => props.type === 'large' ? '55%' : '160px'};
-  background: ${props =>
+  height: ${(props) => (props.type === 'large' ? '55%' : '160px')};
+  background: ${(props) =>
     props.image && `url(${props.image}) no-repeat center center;`};
   background-size: cover;
   cursor: pointer;
@@ -36,7 +36,6 @@ export const Image = styled.div<ImageProps>`
   @media (max-width: 769px) {
     height: 200px;
   }
-
 `;
 
 export const Wrapper = styled.div`
@@ -48,14 +47,20 @@ export const Wrapper = styled.div`
   > div {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 
     > span {
       font-weight: normal;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 12px;
       letter-spacing: 0.5px;
       opacity: 0.3;
     }
   }
+`;
+
+export const Separator = styled.span`
+  width: 15px;
+  height: 0px;
+  border: 1px solid #dedede;
 `;

@@ -29,9 +29,7 @@ export const Logo = styled.img`
   width: 130px;
 `;
 
-export const Copy = styled.span`
-
-`;
+export const Copy = styled.span``;
 
 export const SocialIconsWrapper = styled.div`
   display: flex;
@@ -61,6 +59,6 @@ export const SocialBtn = styled.button`
   }
 
   :hover:before {
-   border: 2px solid var(--white);
+    border: 2px solid var(--white);
   }
 `;

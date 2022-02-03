@@ -1,12 +1,8 @@
 import React from 'react';
 
-import { 
-  Facebook, 
-  Instagram, 
-  Twitter 
-} from '../../styles/Icons';
+import { Facebook, Instagram, Twitter } from '../../styles/Icons';
 
-import { 
+import {
   Container,
   LogoWrapper,
   Logo,
@@ -28,7 +24,7 @@ export const Footer: React.FC = () => {
           <Facebook />
         </SocialBtn>
         <SocialBtn>
-            <Instagram />
+          <Instagram />
         </SocialBtn>
         <SocialBtn>
           <Twitter />
@@ -36,4 +32,4 @@ export const Footer: React.FC = () => {
       </SocialIconsWrapper>
     </Container>
   );
-}
+};

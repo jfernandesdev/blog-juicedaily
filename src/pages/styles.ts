@@ -7,7 +7,7 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
   width: 100%;
   height: calc(100vh - 90px);
-  background: ${props =>
+  background: ${(props) =>
     props.imageBackground &&
     `linear-gradient(to right, transparent 0%, #fcfcfc 70%),
     url('${props.imageBackground}') no-repeat left center`};
@@ -17,7 +17,7 @@ export const Container = styled.div<ContainerProps>`
   overflow: hidden;
 
   @media (max-width: 769px) {
-    background: ${props =>
+    background: ${(props) =>
       props.imageBackground &&
       `linear-gradient(to bottom left, transparent 0%, #fdfdfd 60%),
     url('${props.imageBackground}') no-repeat left 0`};
@@ -87,7 +87,7 @@ export const PostsGrid = styled.div`
     grid-column-end: 4;
   }
 
-   > :nth-child(3) {
+  > :nth-child(3) {
     grid-column-start: 1;
     grid-column-end: 4;
     display: grid;
@@ -95,8 +95,8 @@ export const PostsGrid = styled.div`
     grid-gap: 20px;
 
     @media (max-width: 769px) {
-    display: flex;
-    flex-direction: column;
-  }
+      display: flex;
+      flex-direction: column;
+    }
   }
 `;

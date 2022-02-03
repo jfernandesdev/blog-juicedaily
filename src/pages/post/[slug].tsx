@@ -1,29 +1,37 @@
 import React from 'react';
 
-import {Container, Content, Image, Wrapper, Title, Text, WrapperCards, Banner} from './styles';
+import {
+  Container,
+  Content,
+  Image,
+  Wrapper,
+  Title,
+  Text,
+  WrapperCards,
+  Banner
+} from './styles';
 
-import {TagCategory} from '../../components/TagCategory';
-import {Author} from '../../components/Author';
+import { TagCategory } from '../../components/TagCategory';
+import { Author } from '../../components/Author';
 import { Card } from '../../components/Card';
 
 const Post: React.FC = () => {
   return (
     <Container>
-      <Image image='/avocado.jpg' />
+      <Image image="/avocado.jpg" />
       <Content>
         <Title>Simple Juice Recipes to boost your immune system</Title>
 
         <Wrapper>
           <Author
-            image='https://randomuser.me/api/portraits/women/3.jpg'
-            name='Silvia Araújo'
+            image="https://randomuser.me/api/portraits/women/3.jpg"
+            name="Silvia Araújo"
           />
 
-          <TagCategory category='Fruit' color='#40B2C9' />
+          <TagCategory category="Fruit" color="#40B2C9" withSeparator/>
 
           <span>Jan 22, 2022</span>
         </Wrapper>
-
 
         <Text>
           <p>
@@ -93,15 +101,17 @@ const Post: React.FC = () => {
           </p>
         </Text>
 
-        <Banner image='/avocado.jpg'>
-          <h4>Simple Orange <br/>
-            Juice Recipe</h4>
+        <Banner image="/avocado.jpg">
+          <h4>
+            Simple Orange <br />
+            Juice Recipe
+          </h4>
         </Banner>
 
         <h3>Posts relacionados</h3>
         <WrapperCards>
           {Array.from({ length: 3 }).map((_, index) => (
-            <Card key={index} type='medium' hiddenAuthor />
+            <Card key={index} type="medium" hiddenAuthor />
           ))}
         </WrapperCards>
       </Content>

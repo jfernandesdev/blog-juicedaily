@@ -19,18 +19,18 @@ export const Navbar: React.FC = () => {
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
-  }
+  };
 
   return (
     <Container>
       <Logo>
         <Link href="/">
-          <img src='/logo.svg' alt='Juicedaily' />
+          <img src="/logo.svg" alt="Juicedaily" />
         </Link>
         <span>Blog</span>
       </Logo>
-    
-      <NavContainer className={menuIsOpen && "openMenu"}>
+
+      <NavContainer className={menuIsOpen && 'openMenu'}>
         <Nav>
           <NavItem>
             <NavLink href="#">Sucos</NavLink>
@@ -53,10 +53,10 @@ export const Navbar: React.FC = () => {
       <WrapperBtn>
         <InputSearch />
 
-        <NavbarToggler 
-          className={menuIsOpen && "activated"}
+        <NavbarToggler
+          className={menuIsOpen && 'activated'}
           onClick={toggleMenu}
-          >
+        >
           {Array.from({ length: 5 }).map((_, index) => (
             <span key={index}></span>
           ))}

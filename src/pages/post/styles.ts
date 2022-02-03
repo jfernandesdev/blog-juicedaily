@@ -22,7 +22,7 @@ interface ImageProps {
 export const Image = styled.div<ImageProps>`
   width: 100%;
   height: 300px;
-  background: ${props =>
+  background: ${(props) =>
     props.image && `url(${props.image}) no-repeat center center;`};
   background-size: cover;
   cursor: pointer;
@@ -54,9 +54,9 @@ export const Title = styled.h1`
   font-weight: normal;
   padding: 15px;
 
-   @media (max-width: 769px) {
-   font-size: 28px;
-   padding: 5%;
+  @media (max-width: 769px) {
+    font-size: 28px;
+    padding: 5%;
   }
 `;
 
@@ -75,7 +75,7 @@ export const Text = styled.div`
   margin-bottom: 20px;
 
   @media (max-width: 769px) {
-   padding: 0 8%;
+    padding: 0 8%;
   }
 `;
 
@@ -85,7 +85,7 @@ export const WrapperCards = styled.div`
   grid-gap: 16px;
   margin: 20px 0;
 
-   @media (max-width: 769px) {
+  @media (max-width: 769px) {
     display: flex;
     overflow: scroll;
     max-width: 300px;
@@ -97,11 +97,10 @@ export const WrapperCards = styled.div`
   }
 `;
 
-
 export const Banner = styled.div<ImageProps>`
   width: 100%;
   height: 200px;
-  background: ${props =>
+  background: ${(props) =>
     props.image && `url(${props.image}) no-repeat center center;`};
   background-size: cover;
   border-radius: 25px;

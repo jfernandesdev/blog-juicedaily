@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {Container, Content, Title, Text, PostsGrid} from './styles';
+import { Container, Content, Title, Text, PostsGrid } from './styles';
 
-import {Carousel, CarouselItem} from '../components/Carousel';
+import { Carousel, CarouselItem } from '../components/Carousel';
 
 import { Card } from '../components/Card';
 import { SmallCard } from '../components/SmallCard';
@@ -42,19 +42,19 @@ const Home: React.FC = () => {
       </Carousel>
 
       <PostsGrid>
-        <Card type='large'/>
+        <Card type="large" />
 
         <div>
           {Array.from({ length: 4 }).map((_, index) => (
             <SmallCard key={index} />
           ))}
-        </div> 
-       
-       <div>
-        {Array.from({ length: 6}).map((_, index) => (
-          <Card key={index} type='medium' />
-        ))}
-       </div>
+        </div>
+
+        <div>
+          {Array.from({ length: 6 }).map((_, index) => (
+            <Card key={index} type="medium" />
+          ))}
+        </div>
       </PostsGrid>
     </>
   );

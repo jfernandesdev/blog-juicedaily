@@ -6,9 +6,9 @@ import { Layout } from '../components/Layout';
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    <Head>
-      <title>Blog Juicedaily</title>
-    </Head>
+      <Head>
+        <title>Blog Juicedaily</title>
+      </Head>
       <GlobalStyle />
       <main>
         <Layout>
@@ -19,4 +19,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp
+export default MyApp;

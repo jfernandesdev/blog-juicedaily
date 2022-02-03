@@ -11,7 +11,8 @@ interface InnerProps {
 }
 
 export const Inner = styled.div<InnerProps>`
-  transform: ${props => props.translateX && `translateX(${props.translateX})`};
+  transform: ${(props) =>
+    props.translateX && `translateX(${props.translateX})`};
   white-space: nowrap;
   transition: transform 0.4s;
 `;
@@ -54,6 +55,6 @@ export const Indicators = styled.div`
   }
 
   > button:hover {
-   filter: brightness(0.9);
+    filter: brightness(0.9);
   }
 `;

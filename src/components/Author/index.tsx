@@ -1,21 +1,17 @@
 import React from 'react';
 
-import { 
-  Wrapper,
-  Avatar,
-  Name 
-} from './styles';
+import { Wrapper, Avatar, Name } from './styles';
 
 interface AuthorProps {
   image?: string;
   name: string;
 }
 
-export const Author: React.FC<AuthorProps> = ({ image, name}) => {
+export const Author: React.FC<AuthorProps> = ({ image, name }) => {
   return (
     <Wrapper>
-      <Avatar src={image}/>
+      <Avatar src={image} />
       <Name>{name}</Name>
     </Wrapper>
   );
-}
+};

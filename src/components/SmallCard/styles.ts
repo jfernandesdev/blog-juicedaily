@@ -17,16 +17,17 @@ interface ImageProps {
 export const Image = styled.div<ImageProps>`
   min-width: 40%;
   height: 100%;
-  background: ${props => props.image && `url(${props.image}) no-repeat center center;`};
+  background: ${(props) =>
+    props.image && `url(${props.image}) no-repeat center center;`};
   background-size: cover;
-    cursor: pointer;
+  cursor: pointer;
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 5%;
-  
+
   > div {
     display: flex;
     align-items: center;
@@ -35,7 +36,7 @@ export const Wrapper = styled.div`
     @media (max-width: 769px) {
       flex-direction: column;
     }
-   
+
     > span {
       font-weight: normal;
       font-size: 11px;
