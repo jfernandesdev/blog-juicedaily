@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Container, Content, Title, Text, PostsGrid } from './styles';
 
@@ -6,6 +6,7 @@ import { Carousel, CarouselItem } from '../components/Carousel';
 
 import { Card } from '../components/Card';
 import { SmallCard } from '../components/SmallCard';
+import { Pagination } from '../components/Pagination';
 
 const banners = [
   {
@@ -26,6 +27,21 @@ const banners = [
 ];
 
 const Home: React.FC = () => {
+  const [page, setPage] = useState(1);
+  let totalPages = 10;
+
+  const handleNextPage = () => {
+    if (page >= 1 && page < totalPages) {
+      setPage(page + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (page > 1 && page <= totalPages) {
+      setPage(page - 1);
+    }
+  };
+
   return (
     <>
       <Carousel>
@@ -56,6 +72,13 @@ const Home: React.FC = () => {
           ))}
         </div>
       </PostsGrid>
+
+      <Pagination
+        currentPage={page}
+        totalPages={totalPages}
+        next={handleNextPage}
+        previous={handlePreviousPage}
+      />
     </>
   );
 };

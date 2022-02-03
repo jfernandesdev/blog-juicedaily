@@ -14,7 +14,7 @@ interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ type, hiddenAuthor }) => {
   return (
-    <Link href="post/simple-juice-recipes-to-boost-your-immune">
+    <Link href="/post/simple-juice-recipes-to-boost-your-immune">
       <CardWrapper>
         <Image image="/avocado.jpg" type={type} />
 
