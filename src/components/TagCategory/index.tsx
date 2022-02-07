@@ -8,6 +8,14 @@ interface TagCategory {
   withSeparator?: boolean;
 }
 
-export const TagCategory: React.FC<TagCategory> = ({ category, color, withSeparator }) => {
-  return <Category color={color} className={withSeparator && 'withSeparator'}>{category}</Category>;
+export const TagCategory: React.FC<TagCategory> = ({
+  category,
+  color,
+  withSeparator
+}) => {
+  return (
+    <Category color={color} className={withSeparator && 'withSeparator'}>
+      {category}
+    </Category>
+  );
 };

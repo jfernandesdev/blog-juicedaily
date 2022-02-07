@@ -15,7 +15,7 @@ export const Container = styled.div`
     width: 100%;
     height: 70px;
     z-index: 1;
-    background: hsla(0,0%,100%,0.99);
+    background: hsla(0, 0%, 100%, 0.99);
   }
 `;
 
@@ -39,11 +39,10 @@ export const Content = styled.div<Props>`
     justify-content: center;
     height: 100%;
     gap: 16px;
-
   }
 
   > button:hover {
-    background: ${props => props.color ? props.color : `var(--blue)`};
+    background: ${(props) => (props.color ? props.color : `var(--blue)`)};
     color: #fff;
   }
 `;

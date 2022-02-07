@@ -7,7 +7,7 @@ interface ShareButtonsProps {
   color?: string;
 }
 
-export const ShareButtons: React.FC<ShareButtonsProps> = ({color}) => {
+export const ShareButtons: React.FC<ShareButtonsProps> = ({ color }) => {
   return (
     <Container>
       <Content color={color}>
