@@ -104,6 +104,7 @@ export const NavItem = styled.li`
 export const NavLink = styled.a`
   text-decoration: none;
   color: var(--black);
+  cursor: pointer;
 `;
 
 export const WrapperBtn = styled.div`

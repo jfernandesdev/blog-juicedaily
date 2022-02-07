@@ -33,19 +33,29 @@ export const Navbar: React.FC = () => {
       <NavContainer className={menuIsOpen && 'openMenu'}>
         <Nav>
           <NavItem>
-            <NavLink href="#">Sucos</NavLink>
+            <Link href="/category/sucos">
+              <NavLink>Sucos</NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Frutas</NavLink>
+            <Link href="/category/frutas">
+              <NavLink>Frutas</NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Dicas</NavLink>
+            <Link href="/category/dicas">
+              <NavLink>Dicas</NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Receitas</NavLink>
+            <Link href="/category/receitas">
+              <NavLink>Receitas</NavLink>
+            </Link>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Bem-estar</NavLink>
+            <Link href="/category/bem-estar">
+              <NavLink>Bem-estar</NavLink>
+            </Link>
           </NavItem>
         </Nav>
       </NavContainer>
