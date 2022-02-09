@@ -1,5 +1,7 @@
-const withImages = require('next-images');
+const nextConfig = {
+  images: {
+    domains: ['images.prismic.io/blog-juicedaily']
+  }
+};
 
-module.exports = withImages({
-  esModule: true
-});
+module.exports = nextConfig;

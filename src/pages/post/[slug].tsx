@@ -1,4 +1,16 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react';
+import Prismic from '@prismicio/client';
+
+import { parseISO, format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
+
+import { ShareButtons } from '../../components/ShareButtons';
+import { TagCategory } from '../../components/TagCategory';
+import { Author } from '../../components/Author';
+import { Card } from '../../components/Card';
+
+import { getPrismicClient } from '../../services/prismic';
 
 import {
   Container,
@@ -10,19 +22,41 @@ import {
   WrapperCards,
   Banner
 } from './styles';
+import LoadingScreen from '../../components/LoadingScreen';
+import { useRouter } from 'next/router';
 
-import { ShareButtons } from '../../components/ShareButtons';
-import { TagCategory } from '../../components/TagCategory';
-import { Author } from '../../components/Author';
-import { Card } from '../../components/Card';
+interface IPosts {
+  slug: string;
+  title: string;
+  category: {
+    slug: string;
+  };
+  author: string;
+  text: {
+    type: string;
+    text: string;
+  }[];
+  thumbnail: string;
+  publication_date: string;
+}
 
-const Post: React.FC = () => {
+interface PostProps {
+  post: IPosts;
+}
+
+export default function Post({ post }: PostProps) {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <LoadingScreen />;
+  }
+
   return (
     <Container>
-      <Image image="/avocado.jpg" />
+      <Image image={post.thumbnail} />
       <Content>
-        <ShareButtons color="#40B2C9"/>
-        <Title>Simple Juice Recipes to boost your immune system</Title>
+        <ShareButtons color="#40B2C9" />
+        <Title>{post.title}</Title>
 
         <Wrapper>
           <Author
@@ -30,9 +64,13 @@ const Post: React.FC = () => {
             name="Silvia Araújo"
           />
 
-          <TagCategory category="Fruit" color="#40B2C9" withSeparator />
+          <TagCategory
+            category={post.category.slug}
+            color="#40B2C9"
+            withSeparator
+          />
 
-          <span>Jan 22, 2022</span>
+          <span>{post.publication_date}</span>
         </Wrapper>
 
         <Text>
@@ -112,13 +150,57 @@ const Post: React.FC = () => {
 
         <h3>Posts relacionados</h3>
         <WrapperCards>
-          {Array.from({ length: 3 }).map((_, index) => (
+          {/* {Array.from({ length: 3 }).map((_, index) => (
             <Card key={index} type="medium" hiddenAuthor />
-          ))}
+          ))} */}
         </WrapperCards>
       </Content>
     </Container>
   );
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const prismic = getPrismicClient();
+  const posts = await prismic.query([
+    Prismic.predicates.at('document.type', 'posts')
+  ]);
+
+  const paths = posts.results.map((post) => ({
+    params: {
+      slug: post.uid
+    }
+  }));
+
+  return {
+    paths,
+    fallback: 'blocking'
+  };
 };
 
-export default Post;
+export const getStaticProps: GetStaticProps = async (context) => {
+  const prismic = getPrismicClient();
+  const { slug } = context.params;
+
+  const response = await prismic.getByUID('posts', String(slug), {});
+
+  const post = {
+    slug: response.uid,
+    title: response.data.title,
+    category: response.data.category,
+    author: response.data.author,
+    text: response.data.text,
+    thumbnail: response.data.thumbnail.url,
+    publication_date: format(
+      parseISO(response.first_publication_date),
+      'd MMM yy',
+      { locale: ptBR }
+    )
+  };
+
+  return {
+    props: {
+      post
+    },
+    revalidate: 60 * 60 * 8 // uma requisição de atualização da API a cada 8h
+  };
+};

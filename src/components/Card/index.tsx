@@ -7,20 +7,36 @@ import { TagCategory } from '../TagCategory';
 import { Author } from '../Author';
 import Title from '../Title';
 
+interface IPosts {
+  slug: string;
+  title: string;
+  category: {
+    slug: string;
+  };
+  author: string;
+  text: {
+    type: string;
+    text: string;
+  }[];
+  thumbnail: string;
+  publication_date: string;
+}
+
 interface CardProps {
   type: 'medium' | 'large';
   hiddenAuthor?: boolean;
+  post: IPosts;
 }
 
-export const Card: React.FC<CardProps> = ({ type, hiddenAuthor }) => {
+export const Card: React.FC<CardProps> = ({ type, hiddenAuthor, post }) => {
   return (
-    <Link href="/post/simple-juice-recipes-to-boost-your-immune">
+    <Link href={`/post/${post.slug}`}>
       <CardWrapper>
-        <Image image="/avocado.jpg" type={type} />
+        <Image image={post.thumbnail} type={type} />
 
         <Wrapper>
           <div>
-            <TagCategory category="Fruit" color="#40B2C9" />
+            <TagCategory category={post.category.slug} color="#40B2C9" />
             <Separator />
             <span>5 min. de leitura</span>
           </div>
@@ -31,24 +47,16 @@ export const Card: React.FC<CardProps> = ({ type, hiddenAuthor }) => {
                 image="https://randomuser.me/api/portraits/women/3.jpg"
                 name="Silvia Araújo"
               />
-              <span>Jan 22, 2022</span>
+              <span>{post.publication_date}</span>
             </div>
           )}
         </Wrapper>
 
         <Title>
-          I am large card I am large card I am large card I am large cardI am
-          large cardI am large cardI am large cardI am large cardI am large
-          cardI am large card
+         {post.title}
         </Title>
         {type === 'large' && (
-          <Description>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit,. Lorem ipsum
-            dolor sit amet, consetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit
-          </Description>
+           <Description dangerouslySetInnerHTML={{ __html: post.text[0].text}} />
         )}
       </CardWrapper>
     </Link>

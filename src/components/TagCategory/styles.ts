@@ -7,11 +7,12 @@ interface CategoryProps {
 
 export const Category = styled.h6<CategoryProps>`
   font-weight: 500;
-  font-size: 13px;
+  font-size: 11px;
   line-height: 12px;
   letter-spacing: 1px;
   color: ${(props) => (props.color ? `${props.color}` : '#000')};
   text-transform: uppercase;
+  white-space: nowrap;
 
   &.withSeparator {
     position: relative;

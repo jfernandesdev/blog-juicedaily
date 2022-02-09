@@ -27,31 +27,31 @@ interface ImageProps {
 
 export const Image = styled.div<ImageProps>`
   width: 100%;
-  height: ${(props) => (props.type === 'large' ? '55%' : '160px')};
+  height: ${(props) => (props.type === 'large' ? '55%' : '200px')};
   background: ${(props) =>
     props.image && `url(${props.image}) no-repeat center center;`};
   background-size: cover;
   cursor: pointer;
 
-  @media (max-width: 769px) {
+  /* @media (max-width: 769px) {
     height: 200px;
-  }
+  } */
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 8px;
+  margin-top: 10px;
 
   > div {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
 
     > span {
       font-weight: normal;
-      font-size: 12px;
+      font-size: 11px;
       line-height: 12px;
       letter-spacing: 0.5px;
       opacity: 0.3;
@@ -60,7 +60,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Separator = styled.span`
-  width: 15px;
+  width: 5px;
   height: 0px;
   border: 1px solid #dedede;
 `;

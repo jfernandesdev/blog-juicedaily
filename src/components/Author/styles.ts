@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 3px;
 `;
 
 export const Avatar = styled.img`
@@ -16,7 +16,7 @@ export const Avatar = styled.img`
 export const Name = styled.span`
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 12px;
   letter-spacing: 0.3px;
   color: #273240;

@@ -49,7 +49,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 45px;
+  font-size: 40px;
   text-align: center;
   letter-spacing: -3px;
   font-weight: normal;

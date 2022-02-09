@@ -6,15 +6,35 @@ import { Card, Image, Wrapper } from './styles';
 import Title from '../Title';
 import { Author } from '../Author';
 
-export const SmallCard: React.FC = () => {
+interface IPosts {
+  slug: string;
+  title: string;
+  category: {
+    slug: string;
+  };
+  author: string;
+  text: {
+    type: string;
+    text: string;
+  }[];
+  thumbnail: string;
+  publication_date: string;
+}
+
+interface CardProps {
+  post: IPosts;
+}
+
+export const SmallCard: React.FC<CardProps> = ({post}) => {
   return (
-    <Link href="post/simple-juice-recipes-to-boost-your-immune">
+    <Link href={`/post/${post.slug}`}>
       <Card>
-        <Image image="/avocado.jpg" />
+        <Image image={post.thumbnail} />
+
 
         <Wrapper>
           <Title size={15}>
-            Simple Juice Recipes to boost your immune system
+            {post.title}
           </Title>
 
           <div>
@@ -22,7 +42,7 @@ export const SmallCard: React.FC = () => {
               image="https://randomuser.me/api/portraits/women/3.jpg"
               name="Silvia Araújo"
             />
-            <span>Jan 22, 2022</span>
+            <span>{post.publication_date}</span>
           </div>
         </Wrapper>
       </Card>
